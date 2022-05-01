@@ -1,2 +1,4 @@
-﻿  Heap.cpp
+﻿  BinarySearchTree.cpp
+C:\Users\ariel7342\source\repos\selectionAgorithms\BinarySearchTree.cpp(29): warning C4715: 'BinarySearchTree::FindNodeHealper': not all control paths return a value
+C:\Users\ariel7342\source\repos\selectionAgorithms\BinarySearchTree.cpp(65): warning C4715: 'BinarySearchTree::findParentNodeHelper': not all control paths return a value
   selectionAgorithms.vcxproj -> C:\Users\ariel7342\source\repos\selectionAgorithms\x64\Debug\selectionAgorithms.exe

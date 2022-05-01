@@ -1,9 +1,9 @@
 #include "BinarySearchNode.h"
 
-BinarySearchNode::BinarySearchNode(Person *data, BinarySearchNode* left, BinarySearchNode* right): data(data), left(left), right(right) {};
+BinarySearchNode::BinarySearchNode(Person data, BinarySearchNode* left, BinarySearchNode* right): data(data), left(left), right(right) {};
 
 int BinarySearchNode::getId() const {
-	return this->data->getId();
+	return this->data.getId();
 };
 
 BinarySearchNode* BinarySearchNode::getLeft()const {
@@ -22,10 +22,10 @@ void BinarySearchNode::setRight( BinarySearchNode* right) {
 	this->right = right;
 };
 
-Person* BinarySearchNode::getData()const {
+Person BinarySearchNode::getData()const {
 	return this->data;
 }
 
-void BinarySearchNode::setData(Person* data) {
+void BinarySearchNode::setData(Person data) {
 	this->data = data;
 }
