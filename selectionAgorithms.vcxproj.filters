@@ -24,7 +24,7 @@
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="RandomSelection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UserInput.cpp">
@@ -44,7 +44,7 @@
     <ClInclude Include="Person.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="RandomSelection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserInput.h">

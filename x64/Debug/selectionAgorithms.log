@@ -1,4 +1,8 @@
-﻿  BinarySearchTree.cpp
-C:\Users\ariel7342\source\repos\selectionAgorithms\BinarySearchTree.cpp(29): warning C4715: 'BinarySearchTree::FindNodeHealper': not all control paths return a value
-C:\Users\ariel7342\source\repos\selectionAgorithms\BinarySearchTree.cpp(65): warning C4715: 'BinarySearchTree::findParentNodeHelper': not all control paths return a value
+﻿  main.cpp
+  RandomSelection.cpp
+C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(4,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(39,14): warning C4101: 'temp': unreferenced local variable
+  Generating Code...
+C:\Users\ariel7342\source\repos\selectionAgorithms\main.cpp(34): warning C4172: returning address of local variable or temporary: personK
+C:\Users\ariel7342\source\repos\selectionAgorithms\main.cpp(53): warning C4172: returning address of local variable or temporary: personK
   selectionAgorithms.vcxproj -> C:\Users\ariel7342\source\repos\selectionAgorithms\x64\Debug\selectionAgorithms.exe

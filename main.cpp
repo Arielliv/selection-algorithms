@@ -2,8 +2,9 @@
 #include "Person.h"
 #include "Heap.h"
 #include "BinarySearchTree.h"
+#include "RandomSelection.h"
 
-const Person& selectHeap(Person personList[], int n, int k, int& NumComp);
+const Person& SelectHeap(Person personList[], int n, int k, int& NumComp);
 const Person& BST(Person personList[], int n, int k, int& NumComp);
 const Person& RandSelection(Person personList[], int n, int k, int& NumComp);
 
@@ -16,12 +17,15 @@ int main() {
 	Person* personList = new Person[n];
 	userInput.getPersonList(n, personList);
 	userInput.getPersonKListSize(k);
+	
+	// 3 different algoritems to get the k smallest number
+	RandSelection(personList, n, k, NumComp);
 	BST(personList, n, k, NumComp);
-	selectHeap(personList, n, k, NumComp);
+	SelectHeap(personList, n, k, NumComp);
 
 }
 
-const Person& selectHeap(Person personList[], int n, int k, int& NumComp) {
+const Person& SelectHeap(Person personList[], int n, int k, int& NumComp) {
 	Person personK;
 	Heap personHeap = Heap(personList, n);
 	for (int i = 0; i < k; i++) {
@@ -41,6 +45,10 @@ const Person& BST(Person personList[], int n, int k, int& NumComp) {
 	return personKList[k - 1];
 }
 
-//const Person& RandSelection(Person personList[], int n, int k, int& NumComp) {
-//
-//}
+const Person& RandSelection(Person personList[], int n, int k, int& NumComp) {
+	Person personK;
+	RandomSelection randomSelection = RandomSelection();
+	randomSelection.initRandomize();
+	personK = randomSelection.Selection(personList, n, k);
+	return personK;
+}

@@ -145,7 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="UserInput.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="RandomSelection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchNode.h" />
@@ -153,7 +153,7 @@
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="UserInput.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="RandomSelection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,5 +14,6 @@ public:
 	Person(const Person& p);
 	int getId() const;
 	void print() const;
+	Person& operator=(const Person& b);
 };
 

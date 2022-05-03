@@ -10,3 +10,10 @@ int Person::getId() const {
 void Person::print() const {
 	std::cout << this->id << " " << this->firstName << " " << this->lastName << std::endl;
 };
+
+Person& Person::operator=(const Person& b) {
+	this->id = b.id;
+	this->firstName = b.firstName;
+	this->lastName = b.lastName;
+	return *this;
+}
