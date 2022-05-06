@@ -36,7 +36,7 @@ BinarySearchNode* BinarySearchTree::FindNode(int id) const {
 	return this->FindNodeHealper(id, this->root);
 }
 
-Person BinarySearchTree::Find(int id) const {
+Person* BinarySearchTree::Find(int id) const {
 	return this->FindNode(id)->getData();
 }
 
@@ -98,7 +98,7 @@ void BinarySearchTree::InsertHealper(const int id, BinarySearchNode* newNode){
 	}
 }
 
-void BinarySearchTree::Insert(int id, Person person) {
+void BinarySearchTree::Insert(int id, Person* person) {
 	BinarySearchNode* newNode = new BinarySearchNode(person, nullptr,nullptr);
 	if (this->IsEmpty()) {
 		this->root = newNode;
@@ -132,9 +132,9 @@ void BinarySearchTree::DeleteHealperOneChildNode(BinarySearchNode* nodeToDelete,
 }
 
 void BinarySearchTree::swap(BinarySearchNode* node1, BinarySearchNode* node2) {
-	Person tmp = node1->getData();
-	node1->setData(node2->getData());
-	node2->setData(tmp);
+	BinarySearchNode* tmp = node1;
+	node1 = node2;
+	node2 = tmp;
 }
 
 void BinarySearchTree::DeleteHealper(int id, BinarySearchNode* root) {
@@ -167,7 +167,7 @@ BinarySearchNode* BinarySearchTree::MinNodeHealper(BinarySearchNode* root) const
 	}
 };
 
-Person BinarySearchTree::Min() const {
+Person* BinarySearchTree::Min() const {
 	if (this->IsEmpty()) {
 		//error
 	}
@@ -183,7 +183,7 @@ BinarySearchNode* BinarySearchTree::MaxNodeHealper(BinarySearchNode* root) const
 	}
 };
 
-Person BinarySearchTree::Max() const {
+Person* BinarySearchTree::Max() const {
 	if (this->IsEmpty()) {
 		//error
 	}
@@ -196,7 +196,7 @@ BinarySearchNode* BinarySearchTree::SuccNodeHealper(int id) const {
 };
 
 
-Person BinarySearchTree::Succ(int id) const {
+Person* BinarySearchTree::Succ(int id) const {
 	return this->SuccNodeHealper(id)->getData();
 };
 
@@ -205,24 +205,24 @@ BinarySearchNode* BinarySearchTree::PredNodeHealper(int id) const {
 	return this->MaxNodeHealper(node->getLeft());
 };
 
-Person BinarySearchTree::Pred(int id) const {
+Person* BinarySearchTree::Pred(int id) const {
 	return this->PredNodeHealper(id)->getData();
 };
 
-std::vector<Person> BinarySearchTree::ToDLRList() const {
-	std::vector<Person> personList;
+const Person& BinarySearchTree::getKthSmallest(const int k) const {
+	std::vector<BinarySearchNode *> personList;
 	this->ToDLRListHealper(this->root, personList);
-	return personList;
+	return *(personList[k-1]->getData());
 }
 
-void BinarySearchTree::ToDLRListHealper(BinarySearchNode* root, std::vector<Person>& personList) const {
+void BinarySearchTree::ToDLRListHealper(BinarySearchNode* root, std::vector<BinarySearchNode *>& personList) const {
 	if (root == NULL) {
 		return;
 	}
 	
-	personList.push_back(root->getData());
-
 	this->ToDLRListHealper(root->getLeft(), personList);
+	
+	personList.push_back(root);
 
 	this->ToDLRListHealper(root->getRight(), personList);
 }

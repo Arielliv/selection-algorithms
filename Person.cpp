@@ -1,9 +1,8 @@
 #include "Person.h"
 
 Person::Person(int id, std::string firstName, std::string lastName):id(id), firstName(firstName), lastName(lastName) {};
-Person::Person(const Person& p):id(p.id), firstName(p.firstName), lastName(p.lastName){};
 
-int Person::getId() const {
+const int Person::getId() const {
 	return this->id;
 };
 
@@ -16,4 +15,9 @@ Person& Person::operator=(const Person& b) {
 	this->firstName = b.firstName;
 	this->lastName = b.lastName;
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Person& p) {
+	os << p.id << ' ' << p.firstName << ' ' << p.lastName;
+	return os;
 }

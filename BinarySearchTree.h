@@ -27,22 +27,22 @@ private:
 
 	void swap(BinarySearchNode* node1, BinarySearchNode* node2);
 
-	void ToDLRListHealper(BinarySearchNode* root, std::vector<Person>& personList) const;
+	void ToDLRListHealper(BinarySearchNode* root, std::vector<BinarySearchNode*>& personList) const;
 public:
 	BinarySearchTree();
 	void MakeEmpty();
 	bool IsEmpty() const;
-	Person Find(int id) const;
+	Person* Find(int id) const;
 	BinarySearchNode* findInsertParentNode(const int id) const;
 	BinarySearchNode* findDeleteParentNode(const int id) const;
-	void Insert(int id, Person person);
+	void Insert(int id, Person* person);
 	void Delete(int id);
-	Person Min() const;
-	Person Max() const;
-	Person Succ(int id) const;
-	Person Pred(int id) const;
+	Person* Min() const;
+	Person* Max() const;
+	Person* Succ(int id) const;
+	Person* Pred(int id) const;
 	
-	std::vector<Person> ToDLRList() const;
+	const Person& getKthSmallest(const int k) const;
 	BinarySearchNode* FindkSmallest(BinarySearchNode* root, int k) const;
 };
 

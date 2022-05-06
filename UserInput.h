@@ -8,8 +8,9 @@ class UserInput
 {
 public:
 	UserInput() {};
+	void getRandomInput(int& n);
 	void getPersonListSize(int& n);
 	void getPersonKListSize(int& k);
-	bool getPersonList(int n, Person personList[]);
+	bool getPersonList(int n, Person RpersonList[], Person BpersonList[], Person HpersonList[]);
 };
 

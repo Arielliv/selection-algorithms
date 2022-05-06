@@ -1,8 +1,5 @@
-﻿  main.cpp
-  RandomSelection.cpp
-C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(4,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(39,14): warning C4101: 'temp': unreferenced local variable
+﻿  RandomSelection.cpp
+C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(35,14): warning C4101: 'temp': unreferenced local variable
+  main.cpp
   Generating Code...
-C:\Users\ariel7342\source\repos\selectionAgorithms\main.cpp(34): warning C4172: returning address of local variable or temporary: personK
-C:\Users\ariel7342\source\repos\selectionAgorithms\main.cpp(53): warning C4172: returning address of local variable or temporary: personK
   selectionAgorithms.vcxproj -> C:\Users\ariel7342\source\repos\selectionAgorithms\x64\Debug\selectionAgorithms.exe

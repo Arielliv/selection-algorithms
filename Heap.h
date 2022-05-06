@@ -5,7 +5,7 @@
 class Heap
 {
 private:
-	std::vector<Person> minTree;
+	std::vector<Person*> minTree;
 	int heapSize = 0;
 
 	void heapifyBottomUp(int index);
@@ -17,9 +17,9 @@ public:
 	Heap(Person* personList, int n);
 	void MakeEmpty();
 	bool IsEmpty() const;
-	Person Min() const;
-	void Insert(int id, Person person);
-	Person DeleteMin();
+	Person* Min() const;
+	void Insert(int id, Person* person);
+	const Person& DeleteMin();
 	
 };
 

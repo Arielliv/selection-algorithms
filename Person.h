@@ -11,9 +11,9 @@ private:
 public:
 	Person() {};
 	Person(int id, std::string firstName, std::string lastName);
-	Person(const Person& p);
-	int getId() const;
+	const int getId() const;
 	void print() const;
 	Person& operator=(const Person& b);
+	friend std::ostream& operator<<(std::ostream& os, const Person& p);
 };
 
