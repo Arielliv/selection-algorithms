@@ -30,21 +30,21 @@ int main() {
 	
 	// 3 different algoritems to get the k smallest number
 	const Person& RandSelectionPersonK = RandSelection(personList, n, k, NumComp);
-	std::cout << "RandSelection: " << RandSelectionPersonK << " comparisons" << std::endl;
+	std::cout << "RandSelection: " << RandSelectionPersonK << ' ' << NumComp << " comparisons" << std::endl;
 
 	const Person& SelectHeapPersonK = SelectHeap(HpersonList, n, k, NumComp);
-	std::cout << "selectHeap: " << SelectHeapPersonK << " comparisons" << std::endl;
+	std::cout << "selectHeap: " << SelectHeapPersonK << ' ' << NumComp << " comparisons" << std::endl;
 
 	const Person& BSTPersonK = BST(BpersonList, n, k, NumComp);
-	std::cout << "BST: " << BSTPersonK << " comparisons" << std::endl;
+	std::cout << "BST: " << BSTPersonK << ' ' << NumComp << " comparisons" << std::endl;
 }
 
 const Person& SelectHeap(Person personList[], int n, int k, int& NumComp) {
-	Heap personHeap = Heap(personList, n);
+	Heap personHeap = Heap(personList, n, NumComp);
 	for (int i = 0; i < k-1; i++) {
-		 personHeap.DeleteMin();
+		 personHeap.DeleteMin(NumComp);
 	}
-	return personHeap.DeleteMin();
+	return personHeap.DeleteMin(NumComp);
 }
 
 const Person& BST(Person personList[], int n, int k, int& NumComp) {
@@ -52,12 +52,12 @@ const Person& BST(Person personList[], int n, int k, int& NumComp) {
 	BinarySearchTree BSTree = BinarySearchTree();
 	for (int i = 0; i < n; i++)
 	{
-		BSTree.Insert(personList[i].getId(), &(personList[i]));
+		BSTree.Insert(personList[i].getId(), &(personList[i]), NumComp);
 	}
 	return BSTree.getKthSmallest(k);
 }
 
 const Person& RandSelection(Person personList[], int n, int k, int& NumComp) {
 	RandomSelection randomSelection = RandomSelection();
-	return randomSelection.Selection(personList, n, k);
+	return randomSelection.Selection(personList, n, k, NumComp);
 }

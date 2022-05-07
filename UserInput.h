@@ -3,9 +3,13 @@
 #include <string>       // std::string
 #include <sstream>
 #include "Person.h"
+#include <stdlib.h>
+#include <vector>
 
-class UserInput
+class UserInput	
 {
+private:
+	void checkIsIdExistInArray(std::vector<int>& existingIds, int id) const;
 public:
 	UserInput() {};
 	void getRandomInput(int& n);

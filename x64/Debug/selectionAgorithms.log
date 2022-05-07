@@ -1,5 +1,2 @@
-﻿  RandomSelection.cpp
-C:\Users\ariel7342\source\repos\selectionAgorithms\RandomSelection.cpp(35,14): warning C4101: 'temp': unreferenced local variable
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   selectionAgorithms.vcxproj -> C:\Users\ariel7342\source\repos\selectionAgorithms\x64\Debug\selectionAgorithms.exe
