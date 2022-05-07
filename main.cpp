@@ -6,6 +6,7 @@
 #include "Utils.h"
 #include <algorithm>
 #include <iterator>
+#include <stdlib.h>
 
 
 const Person& SelectHeap(Person personList[], int n, int k, int& NumComp);
@@ -27,6 +28,10 @@ int main() {
 
 	userInput.getPersonList(n, personList, BpersonList, HpersonList);
 	userInput.getPersonKListSize(k);
+	if (k > n) {
+		std::cout << "invalid input" << std::endl;
+		exit(1);
+	}
 	
 	// 3 different algoritems to get the k smallest number
 	const Person& RandSelectionPersonK = RandSelection(personList, n, k, NumComp);
